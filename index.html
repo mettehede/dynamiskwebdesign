@@ -5,11 +5,205 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Chapter</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700&family=Montserrat:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+
 </head>
 
+<header>
+    <nav id="nav" class="nav_hide">
+        <div id="menuburger">☰</div>
+        <a href="forside.html"> <img id="logo" src="galleri/logo.png" alt="logo"></a>
+        <ul id="menu" class="hidden">
+            <li><a href="">HJEM</a></li>
+            <li><a href="">BØGER</a></li>
+            <li><a href="">OM OS</a></li>
+        </ul>
+    </nav>
+</header>
+
 <body>
-    <script src=""></script>
+    <main>
+        <img class="baggrund" src="baggrund.jpg" alt="baggrund">
+        <section id="splash">
+
+            <div id="anmeldelse_slideshow">
+                <div class="anmeldelse">
+                    <div class="venstre">
+                        <h1>“En intim og magtfuld memoir af den tidligere førstedame af De Forenede Stater”</h1>
+                        <h2>Min historie af Michelle Obama</h2>
+                        <button class="laes_mere">Læs mere</button>
+                    </div>
+                    <img src="min-historie.jpg" alt="">
+                </div>
+
+                <div class="anmeldelse">
+                    <div class="venstre">
+                        <h1>“Forbered dig selv på den mest rørende, foruroligende og dybtgående bog i mange sæsoner.”</h1>
+                        <h2>A Little Life af Hanya Yanagihari</h2>
+                        <button class="laes_mere">Læs mere</button>
+                    </div>
+                    <img src="A_Little_LIfe.jpg" alt="">
+                </div>
+
+                <div class="anmeldelse">
+                    <div class="venstre">
+                        <h1>“En intim og magtfuld memoir af den tidligere førstedame af De Forenede Stater”</h1>
+                        <h2>Min historie af Michelle Obama</h2>
+                        <button class="laes_mere">Læs mere</button>
+                    </div>
+                    <img src="min-historie.jpg" alt="">
+                </div>
+
+                <div class="anmeldelse">
+                    <div class="venstre">
+                        <h1>“Forbered dig selv på den mest rørende, foruroligende og dybtgående bog i mange sæsoner.”</h1>
+                        <h2>A Little Life af Hanya Yanagihari</h2>
+                        <button class="laes_mere">Læs mere</button>
+                    </div>
+                    <img src="A_Little_LIfe.jpg" alt="">
+                </div>
+
+                <a class="tilbage" onclick="plusSlides(-1)">❮</a>
+                <a class="frem" onclick="plusSlides(1)">❯</a>
+            </div>
+        </section>
+
+        <h2>nyheder</h2>
+        <section id="nyheder">
+            <article>
+                <img src="A_Little_LIfe.jpg" alt="">
+                <p class="titel">A little life</p>
+                <p class="forfatter">Hanya Yanagihara</p>
+                <p class="pris">DKK 149,95</p>
+            </article>
+
+            <article>
+                <img src="A_Little_LIfe.jpg" alt="">
+                <p class="titel">A little life</p>
+                <p class="forfatter">Hanya Yanagihara</p>
+                <p class="pris">DKK 149,95</p>
+            </article>
+
+            <article>
+                <img src="A_Little_LIfe.jpg" alt="">
+                <p class="titel">A little life</p>
+                <p class="forfatter">Hanya Yanagihara</p>
+                <p class="pris">DKK 149,95</p>
+            </article>
+
+            <article>
+                <img src="A_Little_LIfe.jpg" alt="">
+                <p class="titel">A little life</p>
+                <p class="forfatter">Hanya Yanagihara</p>
+                <p class="pris">DKK 149,95</p>
+            </article>
+
+            <a class="tilbage" onclick="plusSlides(-1)">❮</a>
+            <a class="frem" onclick="plusSlides(1)">❯</a>
+        </section>
+
+        <h2>bestsellers</h2>
+        <section id="bestsellers">
+            <article>
+                <img src="A_Little_LIfe.jpg" alt="">
+                <p class="titel">A little life</p>
+                <p class="forfatter">Hanya Yanagihara</p>
+                <p class="pris">DKK 149,95</p>
+            </article>
+
+            <article>
+                <img src="A_Little_LIfe.jpg" alt="">
+                <p class="titel">A little life</p>
+                <p class="forfatter">Hanya Yanagihara</p>
+                <p class="pris">DKK 149,95</p>
+            </article>
+
+            <article>
+                <img src="A_Little_LIfe.jpg" alt="">
+                <p class="titel">A little life</p>
+                <p class="forfatter">Hanya Yanagihara</p>
+                <p class="pris">DKK 149,95</p>
+            </article>
+
+            <article>
+                <img src="A_Little_LIfe.jpg" alt="">
+                <p class="titel">A little life</p>
+                <p class="forfatter">Hanya Yanagihara</p>
+                <p class="pris">DKK 149,95</p>
+            </article>
+
+            <a class="tilbage" onclick="plusSlides(-1)">❮</a>
+            <a class="frem" onclick="plusSlides(1)">❯</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <h5>New Chapter © 2021</h5>
+        <hr>
+        <div class="ikoner">
+            <div class="instagram">
+                <img src="ikoner/instagram.png" alt="instagram">
+            </div>
+            <div class="facebook">
+                <img src="ikoner/facebook.png" alt="facebook">
+            </div>
+        </div>
+
+
+    </footer>
+
+    <script>
+        window.addEventListener("load", sidenVises);
+
+        function sidenVises() {
+            console.log("sidenVises");
+            document.querySelector("#menuburger").addEventListener("click", toggelmenu);
+        }
+
+        function toggelmenu() {
+            console.log("toggelmenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+            document.querySelector("#nav").classList.toggle("nav_hide");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.querySelector("#menuburger").textContent = "☰";
+            } else {
+                document.querySelector("#menuburger").textContent = "X";
+            }
+        }
+
+        // Kodning til slideshow/anmeldelser
+
+        let slideNummer = 1;
+
+        visSlides(slideNummer);
+
+        function plusSlides(n) {
+            visSlides(slideNummer += n);
+        }
+
+        function visSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("anmeldelse");
+            if (n > slides.length) {
+                slideNummer = 1
+            }
+            if (n < 1) {
+                slideNummer = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideNummer - 1].style.display = "grid";
+        }
+
+    </script>
 </body>
 
 </html>
