@@ -281,19 +281,26 @@ footer img {
     h2 {
         margin-bottom: 1.5vw;
     }
-    #nyheder .frem {
+    .section_frem,
+    .section_tilbage {
+        cursor: pointer;
+        position: absolute;
+        color: #e89071;
+        font-size: 3.5vw;
+    }
+    #nyheder .section_frem {
         right: 22vw;
         top: 55.5vw;
     }
-    #nyheder .tilbage {
+    #nyheder .section_tilbage {
         left: 22vw;
         top: 55.5vw;
     }
-    #bestsellers .frem {
+    #bestsellers .section_frem {
         right: 22vw;
         top: 90.5vw;
     }
-    #bestsellers .tilbage {
+    #bestsellers .section_tilbage {
         left: 22vw;
         top: 90.5vw;
     }
