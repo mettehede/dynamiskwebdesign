@@ -193,7 +193,6 @@ footer img {
         position: absolute;
         top: 0;
         z-index: -1;
-        max-width: 1920px;
     }
     #splash {
         display: block;
@@ -206,7 +205,7 @@ footer img {
         width: 70vw;
         height: 28vw;
         background-color: rgba(0, 0, 0, 0.5);
-        margin-bottom: 10vw;
+        margin-bottom: 7vw;
     }
     .venstre {
         display: inline-block;
@@ -289,6 +288,7 @@ footer img {
     }
     h2 {
         margin-bottom: 1.5vw;
+        margin-top: 5vw;
     }
     /*
     .frem,
