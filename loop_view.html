@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Chapter - Bøger</title>
+    <link rel="stylesheet" href="loop_view.css">
+</head>
+
+<body>
+    <header>
+        <nav id="nav" class="nav_hide">
+            <div id="menuburger">☰</div>
+            <a href="forside.html"> <img id="logo" src="galleri/logo.png" alt="logo"></a>
+            <ul id="menu" class="hidden">
+                <li><a href="">HJEM</a></li>
+                <li><a href="">BØGER</a></li>
+                <li><a href="">OM OS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <body>
+        <main>
+            <section id="first_section">
+                <button data-kategori="alle" class="valgt">Alle</button>
+                <button data-kategori=""></button>
+                <button data-kategori=""></button>
+                <button data-kategori=""></button>
+                <button data-kategori=""></button>
+                <button data-kategori=""></button>
+            </section>
+
+            <section id="second_section">
+                <template>
+                    <article class="bog">
+                        <img src="" alt="" class="billede">
+                        <h2 class="navn"></h2>
+                        <h3 class="forfatter"></h3>
+                        <h4 class="pris"></h4>
+                    </article>
+                </template>
+            </section>
+        </main>
+    </body>
+
+    <script>
+        // Kodning til menu
+        window.addEventListener("load", sidenVises);
+
+        function sidenVises() {
+            console.log("sidenVises");
+            document.querySelector("#menuburger").addEventListener("click", toggelmenu);
+        }
+
+        function toggelmenu() {
+            console.log("toggelmenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+            document.querySelector("#nav").classList.toggle("nav_hide");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.querySelector("#menuburger").textContent = "☰";
+            } else {
+                document.querySelector("#menuburger").textContent = "X";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
