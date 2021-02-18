@@ -143,7 +143,7 @@ footer img {
 
 /*FOOTER MOBILE SLUT*/
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 600px) {
     /*    MENU DESKTOP   */
     nav {
         position: absolute;
@@ -193,6 +193,7 @@ footer img {
         position: absolute;
         top: 0;
         z-index: -1;
+        width: 100%;
     }
     #splash {
         display: block;
@@ -209,11 +210,13 @@ footer img {
     }
     .venstre {
         display: inline-block;
+        grid-area: 1/1;
         margin: 4vw 5vw 5vw 7vw;
         opacity: 1;
         line-height: 3vw;
     }
     #anmeldelse_slideshow img {
+        grid-area: 1/2;
         width: 15.5vw;
         margin-top: 2vw;
     }
@@ -249,17 +252,17 @@ footer img {
     .frem,
     .tilbage {
         cursor: pointer;
-        position: absolute;
         color: #e89071;
         font-size: 3.5vw;
+        padding: 2vw;
     }
     .frem {
-        right: 16vw;
-        top: 19.5vw;
+        grid-area: 1/2;
+        place-self: center end;
     }
     .tilbage {
-        left: 16vw;
-        top: 19.5vw;
+        grid-area: 1/1;
+        place-self: center start;
     }
     /*    PARALLAX SCROLLING EFFEKT  */
     .parallax_effekt {
