@@ -14,7 +14,6 @@ nav {
     text-align: center;
     z-index: 99;
 }
-
 #menuburger {
     font-size: 12vw;
     text-align: right;
@@ -22,7 +21,6 @@ nav {
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
-
 #menu li {
     display: block;
     margin-top: 2vw;
@@ -32,7 +30,6 @@ nav {
     width: 80%;
     margin-left: 8vw;
 }
-
 #menu a {
     font-family: 'Montserrat', sans-serif;
     font-size: 5vw;
@@ -40,20 +37,17 @@ nav {
     text-decoration: none;
     text-transform: uppercase;
 }
-
 .hidden {
     display: none;
 }
-
 .nav_hide {
     height: 8vh;
 }
-
 #logo {
     position: absolute;
-    width: 100vw;
+    width: 25vw;
     left: 2.5vw;
-    top: 20vw;
+    top: 3vw;
 }
 
 /*MENU MOBILE SLUT*/
@@ -61,36 +55,29 @@ nav {
 .baggrund {
     display: none;
 }
-
 #splash {
     display: none;
 }
-
 #billede {
     display: none;
 }
-
 body {
     margin-top: 25vw;
     background-color: #54574F;
 }
-
 #nyheder {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     margin-bottom: 10vw;
 }
-
 #bestsellers {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
-
 article img {
     max-width: 100%;
     box-shadow: 9px 10px 25px 8px rgba(0, 0, 0, 0.7);
 }
-
 h2 {
     font-family: 'Frank Ruhl Libre', serif;
     font-weight: lighter;
@@ -100,21 +87,17 @@ h2 {
     font-size: 2rem;
     margin-bottom: 5vw;
 }
-
 article {
     margin: 0 5vw 10vw 5vw;
 }
-
 p {
     color: white
 }
-
 .titel {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     margin-top: 2vw;
 }
-
 .forfatter {
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
@@ -122,7 +105,6 @@ p {
     font-size: 0.8rem;
     margin-bottom: 1.5vw;
 }
-
 .pris {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
@@ -135,7 +117,6 @@ footer {
     height: 26vw;
     background-color: #F4EEED;
 }
-
 footer h5 {
     font-size: 0.8rem;
     font-family: 'Montserrat', sans-serif;
@@ -145,19 +126,16 @@ footer h5 {
     margin-left: 5vw;
     font-weight: 100;
 }
-
 hr {
     color: gray;
     width: 50vw;
     margin-left: 5vw;
     border-style: solid;
 }
-
 .ikoner {
     display: flex;
     margin-left: 5vw;
 }
-
 footer img {
     padding: 3vw;
     width: 8vw;
@@ -166,40 +144,33 @@ footer img {
 /*FOOTER MOBILE SLUT*/
 
 @media only screen and (min-width: 500px) {
-
     /*    MENU DESKTOP   */
     nav {
         position: absolute;
-        padding: 2vw;
+        padding-top: 2vw;
         background-color: rgba(0, 0, 0, 0);
     }
-
     .hidden {
         display: block;
     }
-
     #menu {
         text-align: right;
         margin-right: 5vw;
     }
-
     #menu li {
         display: inline;
         padding: 0.1vw;
         margin: 0;
         margin-right: 2vw;
     }
-
     #logo {
         width: 7vw;
         left: 5vw;
         top: 1vw;
     }
-
     #menuburger {
         display: none;
     }
-
     #menu a {
         padding-left: 2vw;
         padding-right: 2vw;
@@ -207,19 +178,15 @@ footer img {
         text-decoration: none;
         text-transform: uppercase;
     }
-
     #menu a:hover {
         color: white;
     }
-
     .hide {
         display: none;
     }
-
     .nav_hide {
         height: 3vh;
     }
-
     /*    MENU DESKTOP SLUT */
     .baggrund {
         display: block;
@@ -228,11 +195,9 @@ footer img {
         z-index: -1;
         max-width: 1920px;
     }
-
     #splash {
         display: block;
     }
-
     /*    SPLASH SLIDESHOW    */
     .anmeldelse {
         display: grid;
@@ -243,19 +208,16 @@ footer img {
         background-color: rgba(0, 0, 0, 0.5);
         margin-bottom: 10vw;
     }
-
     .venstre {
         display: inline-block;
         margin: 4vw 5vw 5vw 7vw;
         opacity: 1;
         line-height: 3vw;
     }
-
     #anmeldelse_slideshow img {
         width: 15.5vw;
         margin-top: 2vw;
     }
-
     h1 {
         font-family: 'Frank Ruhl Libre', serif;
         font-weight: bold;
@@ -263,7 +225,6 @@ footer img {
         font-size: 1.9rem;
         margin-bottom: 1vw;
     }
-
     #anmeldelse_slideshow h2 {
         font-family: 'Frank Ruhl Libre', serif;
         font-weight: lighter;
@@ -271,7 +232,6 @@ footer img {
         text-align: left;
         text-transform: none;
     }
-
     .laes_mere {
         width: 8vw;
         height: 2.5vw;
@@ -284,7 +244,6 @@ footer img {
         text-transform: uppercase;
         margin-top: 2.5vw;
     }
-
     .frem,
     .tilbage {
         cursor: pointer;
@@ -292,99 +251,91 @@ footer img {
         color: #e89071;
         font-size: 3.5vw;
     }
-
     .frem {
         right: 16vw;
         top: 19.5vw;
     }
-
     .tilbage {
         left: 16vw;
         top: 19.5vw;
     }
-
+    /*    PARALLAX SCROLLING EFFEKT  */
+    .parallax_effekt {
+        background-image: url(billede.jpg);
+        height: 400px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     /*    NYHEDER OG BESTSELLER SEKTIONER   */
     #nyheder {
         background-color: #54574F;
         margin-left: 25vw;
         margin-bottom: 7vw;
     }
-
     #bestsellers {
         margin-left: 25vw;
         margin-bottom: 10vw;
     }
-
     article {
         margin: 0 1.5vw 0 1.5vw;
     }
-
     img {
         object-fit: cover;
     }
-
     body {
         margin-top: 8vw;
     }
-
     h2 {
         margin-bottom: 1.5vw;
     }
-
-    .section_frem,
-    .section_tilbage {
+    /*
+    .frem,
+    .tilbage {
         cursor: pointer;
         position: absolute;
         color: #e89071;
         font-size: 3.5vw;
     }
-
-    #nyheder .section_frem {
+    #nyheder .frem {
         right: 22vw;
         top: 55.5vw;
     }
-
-    #nyheder .section_tilbage {
+    #nyheder .tilbage {
         left: 22vw;
         top: 55.5vw;
     }
-
-    #bestsellers .section_frem {
+    #bestsellers .frem {
         right: 22vw;
         top: 90.5vw;
     }
-
-    #bestsellers .section_tilbage {
+    #bestsellers .tilbage {
         left: 22vw;
         top: 90.5vw;
     }
-
+*/
     /*FOOTER DESKTOP*/
     footer {
         margin-top: 5vw;
         height: 12vw;
     }
-
     footer h5 {
         font-size: 1rem;
         padding-top: 4vw;
         padding-bottom: 1vw;
         margin-left: 10vw;
     }
-
     .ikoner {
         padding-left: 7vw;
     }
-
     footer img {
         padding: 1vw;
         width: 2.5vw;
     }
-
     hr {
         width: 50vw;
         margin-left: 10vw;
     }
-
     /*FOOTER DESKTOP SLUT*/
 }
