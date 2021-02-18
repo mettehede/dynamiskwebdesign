@@ -65,18 +65,25 @@ body {
     margin-top: 25vw;
     background-color: #54574F;
 }
-#nyheder {
+.artikel_nyheder {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    margin-bottom: 10vw;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin: 0 5vw 10vw 5vw;
+    grid-gap: 5vw;
 }
-#bestsellers {
+.artikel_bestsellers {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin: 0 5vw 10vw 5vw;
+    grid-gap: 5vw;
 }
 article img {
     max-width: 100%;
     box-shadow: 9px 10px 25px 8px rgba(0, 0, 0, 0.7);
+}
+.frem,
+.tilbage {
+    visibility: hidden;
 }
 h2 {
     font-family: 'Frank Ruhl Libre', serif;
@@ -88,7 +95,7 @@ h2 {
     margin-bottom: 5vw;
 }
 article {
-    margin: 0 5vw 10vw 5vw;
+    margin: 0 0vw 10vw 0vw;
 }
 p {
     color: white
@@ -257,6 +264,7 @@ footer img {
     }
     .frem,
     .tilbage {
+        visibility: visible;
         cursor: pointer;
         color: #e89071;
         font-size: 3.5vw;
@@ -283,14 +291,19 @@ footer img {
     #nyheder {
         background-color: #54574F;
         margin-left: 25vw;
-        margin-bottom: 7vw;
+        margin-bottom: 0vw;
+    }
+    .artikel_nyheder {
+        margin: 0;
+        grid-gap: 2vw;
     }
     #bestsellers {
         margin-left: 25vw;
         margin-bottom: 10vw;
     }
-    article {
-        margin: 0 1.5vw 0 1.5vw;
+    .artikel_bestsellers {
+        margin: 0;
+        grid-gap: 2vw;
     }
     img {
         object-fit: cover;
@@ -301,31 +314,41 @@ footer img {
     h2 {
         margin-bottom: 1.5vw;
     }
-    /*
-    .frem,
-    .tilbage {
-        cursor: pointer;
+    #nyheder .frem,
+    #nyheder .tilbage {
         position: absolute;
+        cursor: pointer;
         color: #e89071;
         font-size: 3.5vw;
+        padding: 2vw;
     }
     #nyheder .frem {
-        right: 22vw;
-        top: 55.5vw;
+        top: 51.5vw;
+        right: 20vw;
     }
     #nyheder .tilbage {
-        left: 22vw;
-        top: 55.5vw;
+        top: 51.5vw;
+        left: 20vw;
+    }
+    #bestsellers .frem,
+    #bestsellers .tilbage {
+        position: absolute;
+        cursor: pointer;
+        color: #e89071;
+        font-size: 3.5vw;
+        padding: 2vw;
     }
     #bestsellers .frem {
-        right: 22vw;
-        top: 90.5vw;
+        top: 84.5vw;
+        right: 20vw;
     }
     #bestsellers .tilbage {
-        left: 22vw;
-        top: 90.5vw;
+        top: 84.5vw;
+        left: 20vw;
     }
-*/
+    article {
+        margin: 0 0vw 5vw 0vw;
+    }
     /*FOOTER DESKTOP*/
     footer {
         margin-top: 5vw;
