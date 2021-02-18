@@ -224,6 +224,9 @@ footer img {
         font-size: 1.9rem;
         margin-bottom: 1vw;
     }
+    #anmeldelse_slideshow .anmeldelse h2 {
+        margin-top: 0vw;
+    }
     #anmeldelse_slideshow h2 {
         font-family: 'Frank Ruhl Libre', serif;
         font-weight: lighter;
