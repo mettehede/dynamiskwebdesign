@@ -14,8 +14,8 @@
             <div id="menuburger">☰</div>
             <a href="forside.html"> <img id="logo" src="galleri/logo.png" alt="logo"></a>
             <ul id="menu" class="hidden">
-                <li><a href="">HJEM</a></li>
-                <li><a href="">BØGER</a></li>
+                <li><a href="index.html">HJEM</a></li>
+                <li><a href="loop_view.html">BØGER</a></li>
                 <li><a href="">OM OS</a></li>
             </ul>
         </nav>
@@ -25,11 +25,11 @@
         <main>
             <section id="first_section">
                 <button data-kategori="alle" class="valgt">Alle</button>
-                <button data-kategori=""></button>
-                <button data-kategori=""></button>
-                <button data-kategori=""></button>
-                <button data-kategori=""></button>
-                <button data-kategori=""></button>
+                <button data-kategori="bestsellere">Bestsellers</button>
+                <button data-kategori="">Biografier</button>
+                <button data-kategori="børnebøger">Børnebøger</button>
+                <button data-kategori="madogdrikke">Mad og Drikke</button>
+                <button data-kategori="rejser">rejser</button>
             </section>
 
             <section id="second_section">
@@ -68,13 +68,32 @@
             }
 
         }
+
+
+        //Kodning til array
+
         let boeger;
         let filter = "alle";
-        const header = document.querySelector("header h1");
         const medieurl = "https://newchapter-47b9.restdb.io/media/";
         const myHeaders = {
 
             "x-apikey": "602f9a2a5ad3610fb5bb63d1"
+        }
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            const filterKnapper = document.querySelectorAll("#first_section button");
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerBoeger));
+            loadJSON();
+        }
+
+        function filtrerBoeger() {
+            filter = this.dataset.kategori;
+            document.querySelector(".valgt").classList.remove("valgt");
+            this.classList.add("valgt");
+            //            header.textContent = this.textContent;
+            visBoeger();
         }
 
         async function loadJSON() {
@@ -90,7 +109,7 @@
 
             const dest = document.querySelector("#second_section");
             const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
-            /* dest.textContent = "";*/
+            dest.textContent = "";
             boeger.forEach(bog => {
                 console.log("Kategori", bog.kategori);
 
@@ -104,5 +123,8 @@
                 }
             })
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
