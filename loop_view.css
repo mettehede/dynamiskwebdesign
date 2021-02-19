@@ -55,6 +55,12 @@ nav {
 body {
     margin-top: 25vw;
     background-color: #54574F;
+    color: white;
+}
+img {
+    width: 200px;
+    height: 280px;
+    object-fit: cover;
 }
 #second_section {
     display: grid;
