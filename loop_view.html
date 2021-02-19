@@ -35,8 +35,8 @@
             <section id="second_section">
                 <template>
                     <article class="bog">
-                        <img src="" alt="" class="billede">
-                        <h2 class="navn"></h2>
+                        <img src="" alt="" class="omslag">
+                        <h2 class="titel"></h2>
                         <h3 class="forfatter"></h3>
                         <h4 class="pris"></h4>
                     </article>
@@ -47,7 +47,7 @@
 
     <script>
         // Kodning til menu
-        window.addEventListener("load", sidenVises);
+        window.addEventListener("load", loadJSON);
 
         function sidenVises() {
             console.log("sidenVises");
@@ -66,9 +66,43 @@
             } else {
                 document.querySelector("#menuburger").textContent = "X";
             }
+
+        }
+        let boeger;
+        let filter = "alle";
+        const header = document.querySelector("header h1");
+        const medieurl = "https://newchapter-47b9.restdb.io/media/";
+        const myHeaders = {
+
+            "x-apikey": "602f9a2a5ad3610fb5bb63d1"
         }
 
-    </script>
-</body>
+        async function loadJSON() {
+            const JSONData = await fetch("https://newchapter-47b9.restdb.io/rest/books", {
+                headers: myHeaders
+            });
+            boeger = await JSONData.json();
+            console.log("Bøger", boeger);
+            visBoeger();
+        }
 
-</html>
+        function visBoeger() {
+
+            const dest = document.querySelector("#second_section");
+            const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
+            /* dest.textContent = "";*/
+            boeger.forEach(bog => {
+                console.log("Kategori", bog.kategori);
+
+                if (filter == bog.kategori || filter == "alle") {
+                    const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".omslag").src = medieurl + bog.omslag[0];
+                    klon.querySelector(".titel").textContent = bog.titel;
+                    klon.querySelector(".forfatter").textContent = bog.forfatter;
+                    klon.querySelector(".pris").textContent = bog.pris + " DKK";
+                    dest.appendChild(klon);
+                }
+            })
+        }
+    </script>
+</body></html>
