@@ -330,6 +330,62 @@
             Bestsellersslides[slideNummer - 1].style.display = "grid";
         }
 
+        const url = "https://newchapter-47b9.restdb.io/rest/books";
+        const medieurl = "https://newchapter-47b9.restdb.io/home/media";
+
+        const options = {
+            headers: {
+                'x-apikey': "21f163f0353ff7aee772cc0c61d0c5706f340"
+            }
+        };
+        const header = document.querySelector("h2");
+
+        document.addEventListener("DOMContentLoaded", start);
+        let retter;
+        let filter = "alle";
+
+        function start() {
+            const filterKnapper = document.querySelectorAll("nav button");
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerRetter));
+            hentData();
+        }
+
+        function filtrerRetter() {
+            filter = this.dataset.kategori;
+            document.querySelector(".valgt").classList.remove("valgt");
+            this.classList.add("valgt");
+            header.textContent = this.textContent;
+            visRetter();
+        }
+
+
+        async function hentData() {
+            const respons = await fetch(url, options);
+            retter = await respons.json();
+            console.log("mad", retter)
+            visRetter();
+        }
+
+
+        function visRetter() {
+
+            const container = document.querySelector("section");
+            const temp = document.querySelector("template").content;
+
+            container.textContent = "";
+
+            retter.forEach(mad => {
+                if (filter == mad.kategori || filter == "alle") {
+                    const klon = temp.cloneNode(true);
+                    klon.querySelector(".billede").src = medieurl + mad.billede;
+                    klon.querySelector(".navn").textContent = mad.navn;
+                    klon.querySelector(".pris").textContent = (`Pris: ${mad.pris},-`);
+                    klon.querySelector(".mad").addEventListener("click", () => visDetaljer(mad));
+                    container.appendChild(klon);
+                }
+            })
+        }
+
     </script>
 </body>
 
