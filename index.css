@@ -116,6 +116,12 @@ p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
 }
+#bestsellers img,
+#nyheder img {
+    width: 200px;
+    height: 280px;
+    object-fit: cover;
+}
 
 /*FOOTER MOBILE*/
 
