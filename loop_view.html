@@ -26,28 +26,27 @@
             <section id="first_section">
                 <button data-kategori="alle" class="valgt">Alle</button>
                 <button data-kategori="bestsellere">Bestsellers</button>
-                <button data-kategori="">Biografier</button>
+                <button data-kategori="biografier">Biografier</button>
                 <button data-kategori="børnebøger">Børnebøger</button>
                 <button data-kategori="madogdrikke">Mad og Drikke</button>
                 <button data-kategori="rejser">rejser</button>
             </section>
 
-            <section id="second_section">
-                <template>
-                    <article class="bog">
-                        <img src="" alt="" class="omslag">
-                        <h2 class="titel"></h2>
-                        <h3 class="forfatter"></h3>
-                        <h4 class="pris"></h4>
-                    </article>
-                </template>
-            </section>
+            <section id="second_section"></section>
+            <template>
+                <article class="bog">
+                    <img src="" alt="" class="omslag">
+                    <h2 class="titel"></h2>
+                    <h3 class="forfatter"></h3>
+                    <h4 class="pris"></h4>
+                </article>
+            </template>
+
         </main>
     </body>
 
     <script>
         // Kodning til menu
-        window.addEventListener("load", loadJSON);
 
         function sidenVises() {
             console.log("sidenVises");
@@ -72,20 +71,24 @@
 
         //Kodning til array
 
-        let boeger;
-        let filter = "alle";
+        const url = "https://newchapter-47b9.restdb.io/rest/books";
         const medieurl = "https://newchapter-47b9.restdb.io/media/";
-        const myHeaders = {
 
-            "x-apikey": "602f9a2a5ad3610fb5bb63d1"
-        }
+        const options = {
+            headers: {
+                'x-apikey': "602f9a2a5ad3610fb5bb63d1"
+            }
+        };
+        //        const header = document.querySelector("h2");
 
         document.addEventListener("DOMContentLoaded", start);
+        let boeger;
+        let filter = "alle";
 
         function start() {
             const filterKnapper = document.querySelectorAll("#first_section button");
             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerBoeger));
-            loadJSON();
+            hentData();
         }
 
         function filtrerBoeger() {
@@ -96,33 +99,37 @@
             visBoeger();
         }
 
-        async function loadJSON() {
-            const JSONData = await fetch("https://newchapter-47b9.restdb.io/rest/books", {
-                headers: myHeaders
-            });
-            boeger = await JSONData.json();
-            console.log("Bøger", boeger);
+
+        async function hentData() {
+            const respons = await fetch(url, options);
+            boeger = await respons.json();
+            console.log("bog", boeger)
             visBoeger();
         }
 
+
         function visBoeger() {
 
-            const dest = document.querySelector("#second_section");
-            const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
-            dest.textContent = "";
-            boeger.forEach(bog => {
-                console.log("Kategori", bog.kategori);
+            const container = document.querySelector("#second_section");
+            const temp = document.querySelector("template").content;
 
+            container.textContent = "";
+
+            boeger.forEach(bog => {
                 if (filter == bog.kategori || filter == "alle") {
-                    const klon = skabelon.cloneNode(true);
-                    klon.querySelector(".omslag").src = medieurl + bog.omslag[0];
+                    const klon = temp.cloneNode(true);
+                    klon.querySelector(".omslag").src = medieurl + bog.omslag;
                     klon.querySelector(".titel").textContent = bog.titel;
-                    klon.querySelector(".forfatter").textContent = bog.forfatter;
-                    klon.querySelector(".pris").textContent = bog.pris + " DKK";
-                    dest.appendChild(klon);
+                    klon.querySelector(".pris").textContent = (`Pris: ${bog.pris},-`);
+                    //                    klon.querySelector(".mad").addEventListener("click", () => visDetaljer(bog));
+                    container.appendChild(klon);
                 }
             })
         }
+
+        //        function visDetaljer(hvad) {
+        //            location.href = `02_detalje.html?id=${hvad._id}`;
+        //        }
 
     </script>
 </body>
