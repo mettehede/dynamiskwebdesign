@@ -54,6 +54,7 @@ nav {
 
 body {
     background-color: #54574F;
+    background-image: url(baggrund.jpg);
     color: white;
 }
 main {
@@ -147,7 +148,7 @@ footer hr {
 
 /*FOOTER MOBILE SLUT*/
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 700px) {
     /*    MENU DESKTOP   */
     nav {
         position: absolute;
@@ -195,9 +196,6 @@ footer hr {
     /*    MENU DESKTOP SLUT */
     main {
         margin-top: 0vw;
-    }
-    body {
-        background-image: url(baggrund.jpg);
     }
     .bog {
         display: grid;
