@@ -46,7 +46,6 @@ nav {
 #logo {
     position: absolute;
     width: 25vw;
-    height: 2vw;
     left: 2.5vw;
     top: 3vw;
 }
@@ -95,7 +94,6 @@ h5 {
 .beskrivelse {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    line-height: 6.5vw;
     margin-bottom: 20vw;
 }
 .info {
@@ -149,7 +147,7 @@ footer hr {
 
 /*FOOTER MOBILE SLUT*/
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 500px) {
     /*    MENU DESKTOP   */
     nav {
         position: absolute;
@@ -172,7 +170,6 @@ footer hr {
     }
     #logo {
         width: 13vw;
-        height: 2vw;
         left: 7vw;
         top: 1vw;
     }
@@ -232,7 +229,6 @@ footer hr {
     }
     .beskrivelse {
         margin: 0;
-        line-height: 1.5vw;
         margin-right: 3vw;
         margin-bottom: 3.5vw;
     }
