@@ -125,6 +125,11 @@ hr {
     color: gray;
     border-style: solid;
 }
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 /*FOOTER MOBILE*/
 
