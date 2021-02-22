@@ -14,8 +14,8 @@
             <div id="menuburger">☰</div>
             <a href="forside.html"> <img id="logo" src="galleri/logo.png" alt="logo"></a>
             <ul id="menu" class="hidden">
-                <li><a href="">HJEM</a></li>
-                <li><a href="">BØGER</a></li>
+                <li><a href="index.html">HJEM</a></li>
+                <li><a href="loop_view.html">BØGER</a></li>
                 <li><a href="">OM OS</a></li>
             </ul>
         </nav>
@@ -23,27 +23,109 @@
 
     <main>
         <article class="bog">
-            <img src="" alt="" class="billede">
-            <h2 class="forfatter"></h2>
-            <h3 class="titel"></h3>
-            <h4 class="pris"></h4>
-            <h5>beskrivelse</h5>
-            <p class="beskrivelse"></p>
+            <img src="" alt="" class="omslag">
+            <div class="hoejre">
+                <h2 class="forfatter"></h2>
+                <h3 class="titel"></h3>
+                <h4 class="pris"></h4>
+                <h5>Beskrivelse:</h5>
+                <p class="beskrivelse"></p>
+
+                <h5>Info:</h5>
+                <div class="info">
+                    <div>
+                        <p>Udgivelsesdato</p>
+                    </div>
+                    <div class="italic">
+                        <p class="udgivelsesdato"></p>
+                    </div>
+
+                    <div>
+                        <p>Sidetal</p>
+                    </div>
+                    <div class="italic">
+                        <p class="sidetal"></p>
+                    </div>
+
+                    <div>
+                        <p>Forlag</p>
+                    </div>
+                    <div class="italic">
+                        <p class="forlag"></p>
+                    </div>
+
+                    <div>
+                        <p>Sprog</p>
+                    </div>
+                    <div class="italic">
+                        <p class="sprog"></p>
+                    </div>
+                </div>
+            </div>
         </article>
 
+        <footer>
+            <h5>New Chapter © 2021</h5>
+            <hr>
+        </footer>
 
-        <article class="info">
-            <h5>info</h5>
-            <p>Titel</p>
-            <p class="titel"></p>
-            <p>Forfatter</p>
-            <p class="forfatter"></p>
-            <p>udgivelse</p>
-            <p class="udgivelse"></p>
-        </article>
+
     </main>
 
-    <script></script>
+    <script>
+        //        kodning til menu
+
+        function toggelmenu() {
+            console.log("toggelmenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+            document.querySelector("#nav").classList.toggle("nav_hide");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.querySelector("#menuburger").textContent = "☰";
+            } else {
+                document.querySelector("#menuburger").textContent = "X";
+            }
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const medieurl = "https://newchapter-47b9.restdb.io/media/";
+        let bog;
+
+        const myHeaders = {
+            "x-apikey": "602f9a2a5ad3610fb5bb63d1"
+        }
+        console.log("ID", id);
+        document.addEventListener("DOMContentLoaded", hentData);
+
+        async function hentData() {
+            console.log("sidenVises");
+            document.querySelector("#menuburger").addEventListener("click", toggelmenu);
+
+            const JSONData = await fetch(`https://newchapter-47b9.restdb.io/rest/books/${id}`, {
+                headers: myHeaders
+            });
+            bog = await JSONData.json();
+            console.log("bøger", bog);
+            visBog(bog);
+        }
+
+        function visBog() {
+            document.querySelector(".omslag").src = medieurl + bog.omslag;
+            document.querySelector(".forfatter").textContent = bog.forfatter;
+            document.querySelector(".titel").textContent = bog.titel;
+            document.querySelector(".pris").textContent = (`DKK ${bog.pris},-`);
+            document.querySelector(".beskrivelse").textContent = bog.beskrivelse;
+            document.querySelector(".sidetal").textContent = bog.sidetal;
+            document.querySelector(".udgivelsesdato").textContent = bog.udgivelsesdato;
+            document.querySelector(".forlag").textContent = bog.forlag;
+            document.querySelector(".sprog").textContent = bog.sprog;
+        }
+
+    </script>
 </body>
 
 </html>

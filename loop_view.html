@@ -24,13 +24,33 @@
     <body>
         <main>
             <section id="first_section">
-                <button data-kategori="alle" class="valgt">Alle</button>
-                <button data-kategori="bestsellere">Bestsellers</button>
-                <button data-kategori="biografier">Biografier</button>
-                <button data-kategori="børnebøger">Børnebøger</button>
-                <button data-kategori="madogdrikke">Mad og Drikke</button>
-                <button data-kategori="rejser">rejser</button>
+                <a data-kategori="alle" class="valgt">
+                    <img src="https://newchapter-47b9.restdb.io/media/602edb5607b2ac380001aacc?s=w" alt="alle">
+                    <h2>alle</h2>
+                </a>
+                <a data-kategori="bestsellere">
+                    <img src="https://newchapter-47b9.restdb.io/media/602ed74407b2ac380001aa8e?s=w" alt="bestsellere">
+                    <h2>Bestsellere</h2>
+                </a>
+                <a data-kategori="biografier">
+                    <img src="https://newchapter-47b9.restdb.io/media/602d989507b2ac3800015c94?s=w" alt="biografier">
+                    <h2>Biografier</h2>
+                </a>
+                <a data-kategori="Børnebøger">
+                    <img src="https://newchapter-47b9.restdb.io/media/602db0a607b2ac3800015db0?s=w" alt="børnebøger">
+                    <h2>Børnebøger</h2>
+                </a>
+                <a data-kategori="madogdrikke">
+                    <img src="https://newchapter-47b9.restdb.io/media/602db44d07b2ac3800015dee?s=w" alt="mad og drikke">
+                    <h2>Mad og <br> drikke</h2>
+                </a>
+                <a data-kategori="rejser">
+                    <img src="https://newchapter-47b9.restdb.io/media/602ed24e07b2ac380001aa0a" alt="rejser">
+                    <h2>Rejser</h2>
+                </a>
             </section>
+
+            <hr>
 
             <section id="second_section"></section>
             <template>
@@ -43,15 +63,18 @@
             </template>
 
         </main>
+
+        <footer>
+            <h5>New Chapter © 2021</h5>
+            <hr>
+        </footer>
+
+
+
     </body>
 
     <script>
         // Kodning til menu
-
-        function sidenVises() {
-            console.log("sidenVises");
-            document.querySelector("#menuburger").addEventListener("click", toggelmenu);
-        }
 
         function toggelmenu() {
             console.log("toggelmenu");
@@ -67,7 +90,6 @@
             }
 
         }
-
 
         //Kodning til array
 
@@ -86,7 +108,9 @@
         let filter = "alle";
 
         function start() {
-            const filterKnapper = document.querySelectorAll("#first_section button");
+            console.log("sidenVises");
+            document.querySelector("#menuburger").addEventListener("click", toggelmenu);
+            const filterKnapper = document.querySelectorAll("#first_section a");
             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerBoeger));
             hentData();
         }
@@ -120,16 +144,17 @@
                     const klon = temp.cloneNode(true);
                     klon.querySelector(".omslag").src = medieurl + bog.omslag;
                     klon.querySelector(".titel").textContent = bog.titel;
-                    klon.querySelector(".pris").textContent = (`Pris: ${bog.pris},-`);
-                    //                    klon.querySelector(".mad").addEventListener("click", () => visDetaljer(bog));
+                    klon.querySelector(".forfatter").textContent = bog.forfatter;
+                    klon.querySelector(".pris").textContent = (`DKK ${bog.pris},-`);
+                    klon.querySelector(".bog").addEventListener("click", () => visDetaljer(bog));
                     container.appendChild(klon);
                 }
             })
         }
 
-        //        function visDetaljer(hvad) {
-        //            location.href = `02_detalje.html?id=${hvad._id}`;
-        //        }
+        function visDetaljer(hvad) {
+            location.href = `single_view.html?id=${hvad._id}`;
+        }
 
     </script>
 </body>

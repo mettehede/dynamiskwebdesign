@@ -2,3 +2,269 @@
     margin: 0;
     padding: 0;
 }
+
+/*MENU MOBILE*/
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #54574F;
+    text-align: center;
+    z-index: 99;
+}
+#menuburger {
+    font-size: 12vw;
+    text-align: right;
+    margin-right: 1vw;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+#menu li {
+    display: block;
+    margin-top: 2vw;
+    margin-bottom: 5vw;
+    margin-right: 2vw;
+    padding: 2vw;
+    width: 80%;
+    margin-left: 8vw;
+}
+#menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5vw;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.hidden {
+    display: none;
+}
+.nav_hide {
+    height: 8vh;
+}
+#logo {
+    position: absolute;
+    width: 25vw;
+    height: 2vw;
+    left: 2.5vw;
+    top: 3vw;
+}
+
+/*MENU MOBILE SLUT*/
+
+body {
+    background-color: #54574F;
+    color: white;
+}
+main {
+    margin-top: 25vw;
+}
+.bog img {
+    width: 300px;
+    box-shadow: 9px 10px 25px 8px rgba(0, 0, 0, 0.7);
+}
+.forfatter {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 1.3rem;
+    margin-top: 7vw;
+}
+.titel {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 2rem;
+    margin-bottom: 6vw;
+}
+.pris {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight: normal;
+    font-size: 1.7rem;
+    margin-bottom: 15vw;
+}
+.bog {
+    margin-left: 9.5vw;
+    margin-right: 9.5vw;
+}
+h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 1.3rem;
+    margin-bottom: 2vw;
+}
+.beskrivelse {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 6.5vw;
+    margin-bottom: 20vw;
+}
+.info {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 25vw;
+}
+.info div {
+    border-bottom: solid 2px #e89071;
+    padding: 5vw 0vw 2vw 2vw;
+}
+.italic {
+    font-style: italic;
+    font-weight: lighter;
+    border-bottom: solid 2px #e89071;
+    padding: 5vw 0vw 2vw 2vw;
+}
+
+/*FOOTER MOBILE*/
+
+footer {
+    width: 100vw;
+    height: 26vw;
+    background-color: #F4EEED;
+}
+footer h5 {
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    padding: 2vw;
+    padding-top: 5vw;
+    text-transform: uppercase;
+    color: black;
+    margin-left: 5vw;
+    font-weight: 100;
+}
+footer hr {
+    color: gray;
+    width: 50vw;
+    margin-left: 5vw;
+    border-style: solid;
+}
+.ikoner {
+    display: flex;
+    margin-left: 5vw;
+}
+
+/*FOOTER MOBILE SLUT*/
+
+@media only screen and (min-width: 600px) {
+    /*    MENU DESKTOP   */
+    nav {
+        position: absolute;
+        padding-top: 2vw;
+        background-color: rgba(0, 0, 0, 0);
+        width: 100%;
+    }
+    .hidden {
+        display: block;
+    }
+    #menu {
+        text-align: right;
+        margin-right: 5vw;
+    }
+    #menu li {
+        display: inline;
+        padding: 0.1vw;
+        margin: 0;
+        margin-right: 2vw;
+    }
+    #logo {
+        width: 13vw;
+        height: 2vw;
+        left: 7vw;
+        top: 1vw;
+    }
+    #menuburger {
+        display: none;
+    }
+    #menu a {
+        padding-left: 2vw;
+        padding-right: 2vw;
+        font-size: 1vw;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    #menu a:hover {
+        color: white;
+    }
+    .hide {
+        display: none;
+    }
+    .nav_hide {
+        height: 3vh;
+    }
+    /*    MENU DESKTOP SLUT */
+    main {
+        margin-top: 0vw;
+    }
+    body {
+        background-image: url(baggrund.jpg);
+    }
+    .bog {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        margin-left: 15vw;
+        margin-right: 15vw;
+        background-color: rgba(0, 0, 0, 0.5);
+        margin-top: 10vw;
+    }
+    .bog img {
+        width: 450px;
+        margin-left: 3vw;
+        margin-top: 3vw;
+    }
+    .forfatter {
+        margin-top: 3vw;
+    }
+    .titel {
+        margin-bottom: 2vw;
+        margin-right: 3vw;
+    }
+    .pris {
+        margin: 0;
+        margin-bottom: 3.5vw;
+    }
+    h5 {
+        margin: 0;
+        margin-bottom: 0.5vw;
+    }
+    .beskrivelse {
+        margin: 0;
+        line-height: 1.5vw;
+        margin-right: 3vw;
+        margin-bottom: 3.5vw;
+    }
+    .info div {
+        padding: 0.5vw 0vw 0.5vw 0.5vw;
+    }
+    .info {
+        margin-bottom: 3vw;
+        margin-right: 0;
+        width: 510px;
+    }
+    /*FOOTER DESKTOP*/
+    footer {
+        margin-top: 5vw;
+        height: 12vw;
+    }
+    footer h5 {
+        font-size: 1rem;
+        padding-top: 4vw;
+        padding-bottom: 1vw;
+        margin-left: 10vw;
+    }
+    .ikoner {
+        padding-left: 7vw;
+    }
+    footer img {
+        padding: 1vw;
+        width: 2.5vw;
+    }
+    footer hr {
+        width: 50vw;
+        margin-left: 10vw;
+    }
+    /*FOOTER DESKTOP SLUT*/
+}

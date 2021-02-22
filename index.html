@@ -228,77 +228,17 @@
     <footer>
         <h5>New Chapter © 2021</h5>
         <hr>
-        <div class="ikoner">
-            <div class="instagram">
-                <img src="ikoner/instagram.png" alt="instagram">
-            </div>
-            <div class="facebook">
-                <img src="ikoner/facebook.png" alt="facebook">
-            </div>
-        </div>
-
-
     </footer>
 
     <script>
-        //        const url = "https://newchapter-47b9.restdb.io/rest/books";
-        //        const medieurl = "https://newchapter-47b9.restdb.io/media/";
-        //
-        //        const options = {
-        //            headers: {
-        //                'x-apikey': "602f9a2a5ad3610fb5bb63d1"
-        //            }
-        //        };
-        //
-        //
-        //        document.addEventListener("DOMContentLoaded", start);
-        //        let boeger;
-        //
-        //        function start() {
-        //            hentData();
-        //        }
-        //
-        //        async function hentData() {
-        //            const respons = await fetch(url, options);
-        //            boeger = await respons.json();
-        //            console.log("bøger", boeger)
-        //            visBoeger();
-        //        }
-        //
-        //
-        //        function visBoeger() {
-        //
-        //            const container = document.querySelector(".artikel");
-        //            const temp = document.querySelector("template").content;
-        //
-        //            container.textContent = "";
-        //
-        //            boeger.forEach(bog => {
-        //                const klon = temp.cloneNode(true);
-        //                klon.querySelector(".omslag").src = medieurl + bog.omslag[0];
-        //                klon.querySelector(".titel").textContent = bog.titel;
-        //                klon.querySelector(".pris").textContent = (`Pris: ${bog.pris},-`);
-        //                //                klon.querySelector(".bog").addEventListener("click", () => visDetaljer(bog));
-        //                container.appendChild(klon);
-        //
-        //            })
-        //        }
+        // kodning til menu
+        window.addEventListener("load", sidenVises);
 
-        //        function visDetaljer(hvad) {
-        //            location.href = `02_detalje.html?id=${hvad._id}`;
-        //        }
+        function sidenVises() {
+            console.log("sidenVises");
+            document.querySelector("#menuburger").addEventListener("click", toggelmenu);
+        }
 
-
-
-
-        //        //        //kodning til menu
-        //        //        //        window.addEventListener("load", sidenVises);
-        //        //        //
-        //        //        //        function sidenVises() {
-        //        //        console.log("sidenVises");
-        //        //        document.querySelector("#menuburger").addEventListener("click", toggelmenu);
-        //        //        }
-        //
         function toggelmenu() {
             console.log("toggelmenu");
             document.querySelector("#menu").classList.toggle("hidden");

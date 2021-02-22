@@ -46,30 +46,85 @@ nav {
 #logo {
     position: absolute;
     width: 25vw;
+    height: 2vw;
     left: 2.5vw;
     top: 3vw;
 }
 
 /*MENU MOBILE SLUT*/
 
+#first_section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+#first_section img {
+    width: 70px;
+    height: 100px;
+    object-fit: cover;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    box-shadow: 9px 10px 25px 8px rgba(0, 0, 0, 0.7);
+}
+#first_section h2 {
+    font-size: 0.8rem;
+}
 body {
-    margin-top: 25vw;
     background-color: #54574F;
+    background-image: url(baggrund.jpg);
+}
+main {
+    margin-top: 25vw;
     color: white;
 }
 img {
-    width: 200px;
-    height: 280px;
+    width: 170px;
+    height: 275px;
     object-fit: cover;
 }
 #second_section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-gap: 1em;
-    margin: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 4vw;
+    margin: 10vw 2vw 0 2vw;
 }
-article {
-    border: 2px solid #000;
+h2 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 5vw;
+}
+p {
+    color: white
+}
+#second_section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    margin-top: 2vw;
+    text-align: left;
+}
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 0.8rem;
+    margin-bottom: 1.5vw;
+}
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 3vw;
+}
+#second_section img {
+    box-shadow: 9px 10px 25px 8px rgba(0, 0, 0, 0.7);
+}
+hr {
+    margin: 0 3vw 0 3vw;
+    color: gray;
+    border-style: solid;
 }
 
 /*FOOTER MOBILE*/
@@ -83,12 +138,13 @@ footer h5 {
     font-size: 0.8rem;
     font-family: 'Montserrat', sans-serif;
     padding: 2vw;
+    padding-top: 5vw;
     text-transform: uppercase;
     color: black;
     margin-left: 5vw;
     font-weight: 100;
 }
-hr {
+footer hr {
     color: gray;
     width: 50vw;
     margin-left: 5vw;
@@ -97,10 +153,6 @@ hr {
 .ikoner {
     display: flex;
     margin-left: 5vw;
-}
-footer img {
-    padding: 3vw;
-    width: 8vw;
 }
 
 /*FOOTER MOBILE SLUT*/
@@ -111,6 +163,7 @@ footer img {
         position: absolute;
         padding-top: 2vw;
         background-color: rgba(0, 0, 0, 0);
+        width: 100%;
     }
     .hidden {
         display: block;
@@ -151,8 +204,54 @@ footer img {
         height: 3vh;
     }
     /*    MENU DESKTOP SLUT */
-    body {
-        margin-top: 10vw;
+    main {
+        margin: 10vw 15vw 0vw 15vw;
+    }
+    #first_section {
+        display: flex;
+        margin-left: 10vw;
+        margin-top: 7vw;
+        margin-bottom: 1vw;
+    }
+    #first_section img {
+        width: 90px;
+        height: 130px;
+        object-fit: cover;
+        margin: 0;
+    }
+    #first_section a {
+        margin-left: 1vw;
+        margin-right: 1vw;
+        cursor: pointer;
+        text-align: center;
+    }
+    #first_section h2 {
+        font-family: 'Frank Ruhl Libre', serif;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 0;
+        margin-top: 1vw;
+    }
+    #second_section img {
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+    #second_section {
+        grid-gap: 5vw;
+        margin-top: 7vw;
+    }
+    .titel {
+        margin-bottom: 0;
+    }
+    .pris {
+        margin-bottom: 0;
+    }
+    hr {
+        width: 100%;
+        margin: 0;
     }
     /*FOOTER DESKTOP*/
     footer {
@@ -172,7 +271,7 @@ footer img {
         padding: 1vw;
         width: 2.5vw;
     }
-    hr {
+    footer hr {
         width: 50vw;
         margin-left: 10vw;
     }
