@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New chapter - Om os</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*MENU MOBILE*/
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #54574F;
+            text-align: center;
+            z-index: 99;
+        }
+
+        #menuburger {
+            font-size: 12vw;
+            text-align: right;
+            margin-right: 1vw;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #menu li {
+            display: block;
+            margin-top: 2vw;
+            margin-bottom: 5vw;
+            margin-right: 2vw;
+            padding: 2vw;
+            width: 80%;
+            margin-left: 8vw;
+        }
+
+        #menu a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5vw;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .nav_hide {
+            height: 8vh;
+        }
+
+        #logo {
+            position: absolute;
+            width: 25vw;
+            left: 2.5vw;
+            top: 3vw;
+        }
+        /*MENU MOBILE SLUT*/
+
+        body {
+            background-image: url(baggrund.jpg);
+            color: white;
+        }
+
+        main {
+            margin-top: 30vw;
+        }
+
+        h2 {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-weight: lighter;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10vw;
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            margin: 2vw 5vw 20vw 5vw;
+            text-align: center;
+        }
+        /*FOOTER MOBILE*/
+
+        footer {
+            width: 100vw;
+            height: 26vw;
+            background-color: #F4EEED;
+        }
+
+        footer h5 {
+            font-size: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            padding: 2vw;
+            padding-top: 5vw;
+            text-transform: uppercase;
+            color: black;
+            margin-left: 5vw;
+            font-weight: 100;
+        }
+
+        hr {
+            color: gray;
+            width: 50vw;
+            margin-left: 5vw;
+            border-style: solid;
+        }
+
+        .ikoner {
+            display: flex;
+            margin-left: 5vw;
+        }
+
+        footer img {
+            padding: 3vw;
+            width: 8vw;
+        }
+        /*FOOTER MOBILE SLUT*/
+
+        @media only screen and (min-width: 600px) {
+            /*    MENU DESKTOP   */
+            nav {
+                position: absolute;
+                padding-top: 2vw;
+                background-color: rgba(0, 0, 0, 0);
+            }
+            .hidden {
+                display: block;
+            }
+            #menu {
+                text-align: right;
+                margin-right: 5vw;
+            }
+            #menu li {
+                display: inline;
+                padding: 0.1vw;
+                margin: 0;
+                margin-right: 2vw;
+            }
+            #logo {
+                width: 13vw;
+                left: 7vw;
+                top: 1vw;
+            }
+            #menuburger {
+                display: none;
+            }
+            #menu a {
+                padding-left: 2vw;
+                padding-right: 2vw;
+                font-size: 1vw;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+            #menu a:hover {
+                color: white;
+            }
+            .hide {
+                display: none;
+            }
+            .nav_hide {
+                height: 3vh;
+            }
+            /*    MENU DESKTOP SLUT */
+            div {
+                background-color: rgba(0, 0, 0, 0.5);
+                margin: 0 15vw 0 15vw;
+                padding: 3vw 10vw 5vw 10vw;
+            }
+            main {
+                margin-top: 8vw;
+            }
+            h2 {
+                margin: 0;
+                margin-bottom: 2vw;
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1.1rem;
+                margin: 0;
+                line-height: 2;
+            }
+            /*FOOTER DESKTOP*/
+            footer {
+                margin-top: 5vw;
+                height: 12vw;
+            }
+            footer h5 {
+                font-size: 1rem;
+                padding-top: 4vw;
+                padding-bottom: 1vw;
+                margin-left: 10vw;
+            }
+            .ikoner {
+                padding-left: 7vw;
+            }
+            footer img {
+                padding: 1vw;
+                width: 2.5vw;
+            }
+            hr {
+                width: 50vw;
+                margin-left: 10vw;
+            }
+            /*FOOTER DESKTOP SLUT*/
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="nav" class="nav_hide">
+            <div id="menuburger">☰</div>
+            <a href="index.html"> <img id="logo" src="logo.png" alt="logo"></a>
+            <ul id="menu" class="hidden">
+                <li><a href="index.html">HJEM</a></li>
+                <li><a href="loop_view.html">BØGER</a></li>
+                <li><a href="om_os.html">OM OS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+            <h2>Om New Chapter</h2>
+            <p>
+                Next Chapter er et online bibliotek, der udgiver kvalitetsbøger fulde af inspiration. Her finder du alle vores udgivelser, der blandt andet tæller flotte kogebøger, selvbiografier, og børnebøger.
+                <br>
+                <br> Fælles for udgivelserne er et fokus på kvalitet, livsglæde og bæredygtighed. Det er et must for os at arbejde med forfattere og fotografer, der har stor passion for deres fag og virkelig brænder for det, de laver, hvilket giver os mulighed for at lave de bedste bøger inden for vores felt. Det hele giver os masser af arbejdsglæde samt skaber gode produkter og resultater, som vi vil bruge al vores energi på at fastholde og videreudvikle fremover.
+                <br>
+                <br> Hos Next Chapter elsker vi bøger, og alt det bøger kan betyde for dig og samfundet. Vi vil gøre det så nemt som muligt for dig at læse og udgive bøger i alle afskygninger - fra forfatteren får sin første idé til du som læser vender den sidste side.
+            </p>
+        </div>
+    </main>
+
+
+
+
+    <footer>
+        <h5>New Chapter © 2021</h5>
+        <hr>
+    </footer>
+
+
+
+
+
+    <script>
+        // kodning til menu
+        window.addEventListener("load", sidenVises);
+
+        function sidenVises() {
+            console.log("sidenVises");
+            document.querySelector("#menuburger").addEventListener("click", toggelmenu);
+        }
+
+        function toggelmenu() {
+            console.log("toggelmenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+            document.querySelector("#nav").classList.toggle("nav_hide");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.querySelector("#menuburger").textContent = "☰";
+            } else {
+                document.querySelector("#menuburger").textContent = "X";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
