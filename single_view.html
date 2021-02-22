@@ -120,7 +120,14 @@
             document.querySelector(".pris").textContent = (`DKK ${bog.pris},-`);
             document.querySelector(".beskrivelse").textContent = bog.beskrivelse;
             document.querySelector(".sidetal").textContent = bog.sidetal;
-            document.querySelector(".udgivelsesdato").textContent = bog.udgivelsesdato;
+
+            const string = bog.udgivelsesdato; // f.eks. 2011-06-07T00:00:00.000Z
+            const pattern = /[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/; // mønster: XXXX-XX-XX
+            const result = string.match(pattern); // find den del af string der matcher mønster (pattern)
+            console.log(result);
+            document.querySelector(".udgivelsesdato").textContent = result;
+
+
             document.querySelector(".forlag").textContent = bog.forlag;
             document.querySelector(".sprog").textContent = bog.sprog;
         }
