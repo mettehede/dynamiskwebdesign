@@ -10,9 +10,11 @@
 
 <body>
     <header>
-        <nav id="nav" class="nav_hide">
+        <!-- menu -->
+        <nav class="nav_hide">
             <div id="menuburger">☰</div>
             <a href="index.html"> <img id="logo" src="logo.png" alt="logo"></a>
+            <!-- Dekstop menu linje -->
             <ul id="menu" class="hidden">
                 <li><a href="index.html">HJEM</a></li>
                 <li><a href="loop_view.html">BØGER</a></li>
@@ -21,60 +23,59 @@
         </nav>
     </header>
 
-    <body>
-        <main>
-            <section id="first_section">
-                <a data-kategori="alle" class="valgt">
-                    <img src="https://newchapter-47b9.restdb.io/media/602edb5607b2ac380001aacc?s=w" alt="alle">
-                    <h2>alle</h2>
-                </a>
-                <a data-kategori="bestsellere">
-                    <img src="https://newchapter-47b9.restdb.io/media/602ed74407b2ac380001aa8e?s=w" alt="bestsellere">
-                    <h2>Bestsellere</h2>
-                </a>
-                <a data-kategori="biografier">
-                    <img src="https://newchapter-47b9.restdb.io/media/602d989507b2ac3800015c94?s=w" alt="biografier">
-                    <h2>Biografier</h2>
-                </a>
-                <a data-kategori="boerneboeger">
-                    <img src="https://newchapter-47b9.restdb.io/media/602db0a607b2ac3800015db0?s=w" alt="børnebøger">
-                    <h2>Børnebøger</h2>
-                </a>
-                <a data-kategori="madogdrikke">
-                    <img src="https://newchapter-47b9.restdb.io/media/602db44d07b2ac3800015dee?s=w" alt="mad og drikke">
-                    <h2>Mad og <br> drikke</h2>
-                </a>
-                <a data-kategori="rejser">
-                    <img src="https://newchapter-47b9.restdb.io/media/602ed24e07b2ac380001aa0a" alt="rejser">
-                    <h2>Rejser</h2>
-                </a>
-            </section>
+    <main>
+        <!-- Sektion til filtreringsknapper med data attributter -->
+        <section id="first_section">
+            <a data-kategori="alle" class="valgt">
+                <img src="https://newchapter-47b9.restdb.io/media/602edb5607b2ac380001aacc?s=w" alt="alle">
+                <h2>alle</h2>
+            </a>
+            <a data-kategori="bestsellere">
+                <img src="https://newchapter-47b9.restdb.io/media/602ed74407b2ac380001aa8e?s=w" alt="bestsellere">
+                <h2>Bestsellere</h2>
+            </a>
+            <a data-kategori="biografier">
+                <img src="https://newchapter-47b9.restdb.io/media/602d989507b2ac3800015c94?s=w" alt="biografier">
+                <h2>Biografier</h2>
+            </a>
+            <a data-kategori="boerneboeger">
+                <img src="https://newchapter-47b9.restdb.io/media/602db0a607b2ac3800015db0?s=w" alt="børnebøger">
+                <h2>Børnebøger</h2>
+            </a>
+            <a data-kategori="madogdrikke">
+                <img src="https://newchapter-47b9.restdb.io/media/602db44d07b2ac3800015dee?s=w" alt="mad og drikke">
+                <h2>Mad og <br> drikke</h2>
+            </a>
+            <a data-kategori="rejser">
+                <img src="https://newchapter-47b9.restdb.io/media/602ed24e07b2ac380001aa0a" alt="rejser">
+                <h2>Rejser</h2>
+            </a>
+        </section>
 
-            <hr>
-
-            <section id="second_section"></section>
-            <template>
-                <article class="bog">
-                    <img src="" alt="" class="omslag">
-                    <h2 class="titel"></h2>
-                    <h3 class="forfatter"></h3>
-                    <h4 class="pris"></h4>
-                </article>
-            </template>
-        </main>
-
-        <footer>
-            <h5>New Chapter © 2021</h5>
-            <hr>
-        </footer>
+        <hr>
 
 
+        <section id="second_section"></section>
+        <!--Tom container til alle bøgerne-->
+        <template>
+            <!-- Indholdet af <template> tag, som er html skabelon for de enkelte bøger -->
+            <article class="bog">
+                <img src="" alt="" class="omslag">
+                <h2 class="titel"></h2>
+                <h3 class="forfatter"></h3>
+                <h4 class="pris"></h4>
+            </article>
+        </template>
+    </main>
 
-    </body>
+    <!-- footer med sidens navn og årstal -->
+    <footer>
+        <h5>New Chapter © 2021</h5>
+        <hr>
+    </footer>
 
     <script>
         // Kodning til menu
-
         function toggelmenu() {
             console.log("toggelmenu");
             document.querySelector("#menu").classList.toggle("hidden");
