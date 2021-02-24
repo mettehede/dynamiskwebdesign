@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700&family=Montserrat:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
-
 </head>
 
 <header>
@@ -25,9 +24,10 @@
 
 <body>
     <main>
+        <!-- container til baggrundsbillede -->
         <div class="baggrund"></div>
+        <!-- container til slideshow på splash siden -->
         <section id="splash">
-
             <div id="anmeldelse_slideshow">
                 <div class="anmeldelse">
                     <a class="tilbage" onclick="plusSlides(-1)">❮</a>
@@ -41,7 +41,6 @@
                     </div>
                     <img src="https://newchapter-47b9.restdb.io/media/602ea05e07b2ac380001a717" alt="Min historie">
                 </div>
-
                 <div class="anmeldelse">
                     <a class="tilbage" onclick="plusSlides(-1)">❮</a>
                     <a class="frem" onclick="plusSlides(1)">❯</a>
@@ -54,7 +53,6 @@
                     </div>
                     <img src="https://newchapter-47b9.restdb.io/media/602ed84c07b2ac380001aa9a" alt="Sådan undgår vi klima katastrofen">
                 </div>
-
                 <div class="anmeldelse">
                     <a class="tilbage" onclick="plusSlides(-1)">❮</a>
                     <a class="frem" onclick="plusSlides(1)">❯</a>
@@ -67,7 +65,6 @@
                     </div>
                     <img src="https://newchapter-47b9.restdb.io/media/602ea19807b2ac380001a730" alt="Tvilling yndling grævling">
                 </div>
-
                 <div class="anmeldelse">
                     <a class="tilbage" onclick="plusSlides(-1)">❮</a>
                     <a class="frem" onclick="plusSlides(1)">❯</a>
@@ -80,13 +77,11 @@
                     </div>
                     <img src="https://newchapter-47b9.restdb.io/media/602d9eb507b2ac3800015cea" alt="Casper">
                 </div>
-
             </div>
         </section>
 
-
-
         <h2>nyheder</h2>
+        <!-- container til nyheder slide -->
         <section id="nyheder">
             <div class="artikel_nyheder">
                 <a class="tilbage" onclick="nyhederSlides(-1)">❮</a>
@@ -133,8 +128,7 @@
                 </article>
 
             </div>
-
-            <article class="artikel_nyheder">
+            <div class="artikel_nyheder">
                 <a class="tilbage" onclick="nyhederSlides(-1)">❮</a>
                 <a class="frem" onclick="nyhederSlides(1)">❯</a>
 
@@ -173,12 +167,11 @@
                     <p class="forfatter">Lars Løkke Rasmussen</p>
                     <p class="pris">DKK 220,-</p>
                 </article>
-            </article>
-
+            </div>
         </section>
 
-
         <h2>bestsellers</h2>
+        <!-- container til bestsellers slide -->
         <section id="bestsellers">
             <div class="artikel_bestsellers">
                 <a class="tilbage" onclick="bestsellersSlides(-1)">❮</a>
@@ -220,8 +213,7 @@
                     <p class="pris">240,-</p>
                 </article>
             </div>
-
-            <article class="artikel_bestsellers">
+            <div class="artikel_bestsellers">
                 <a class="tilbage" onclick="bestsellersSlides(-1)">❮</a>
                 <a class="frem" onclick="bestsellersSlides(1)">❯</a>
 
@@ -260,9 +252,8 @@
                     <p class="forfatter">Morten Münster</p>
                     <p class="pris">240,-</p>
                 </article>
-            </article>
+            </div>
         </section>
-
     </main>
 
     <footer>
@@ -271,50 +262,57 @@
     </footer>
 
     <script>
-        // kodning til menu
+        // KODNING TIL MENU
         window.addEventListener("load", sidenVises);
 
         function sidenVises() {
             console.log("sidenVises");
-            document.querySelector("#menuburger").addEventListener("click", toggelmenu);
+            document.querySelector("#menuburger").addEventListener("click", toggelmenu); //eventlistener som lytter efter når man klikker på burger menu og sendes videre til toggelmenu funktionen
         }
 
+        //function som skifter mellem at vise et burgerikon eller et kryds på mobile når man henholdvis har klikket ind og ud af menu'en
         function toggelmenu() {
             console.log("toggelmenu");
             document.querySelector("#menu").classList.toggle("hidden");
             document.querySelector("#nav").classList.toggle("nav_hide");
+            //skifter mellem at vise .hidden classen på #menu'en og .nav_hide classen på #nav'en
 
             let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+            //variabel som er lig med at #menu'en indeholder classen .hidden
 
             if (erSkjult == true) {
                 document.querySelector("#menuburger").textContent = "☰";
+                //hvis erSkjult er sand (altså at #menu indeholder classen .hidden) så skal #menuburger vises som et burger menu ikon
             } else {
                 document.querySelector("#menuburger").textContent = "X";
+                //og ellers (altså at #menu IKKE indeholder classen .hidden) så skal #menuburger vises som et kryds ikon
             }
         }
 
-        // Kodning til splash slideshow
+        // KODNING TIL SPLASH SLIDESHOW
+        //variabel som er lig med 1
         let slideNummer = 1;
-
         visSlides(slideNummer);
 
         function plusSlides(n) {
             visSlides(slideNummer += n);
         }
-
+        //funktion som viser slides
         function visSlides(n) {
             let i;
             let slides = document.getElementsByClassName("anmeldelse");
+            //hvis n er større end 'længden' på .anmeldelse classen så skal slideNummer være 1
             if (n > slides.length) {
                 slideNummer = 1
             }
             if (n < 1) {
+                //hvis n er mindre end 1 skal slideNummer være lig med 'længden' på .anmeldelse
                 slideNummer = slides.length
             }
             for (i = 0; i < slides.length; i++) {
+                //hvis variablen i er lig med 0, eller mindre end længden op .anmeldelse skal der tilføjes
                 slides[i].style.display = "none";
             }
-
             slides[slideNummer - 1].style.display = "grid";
         }
 

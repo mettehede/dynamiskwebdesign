@@ -7,14 +7,18 @@
 
 nav {
     position: fixed;
+    /*Menu'en placere sig ovenpå sidens øvrige*/
     top: 0;
+    /*Den placerer sig øverst*/
     width: 100vw;
     height: 100vh;
     background-color: #54574F;
     text-align: center;
     z-index: 99;
+    /*Den har højeste z-index og ligger derfor ovenpå alt andet*/
 }
 #menuburger {
+    /*Burger menu'en*/
     font-size: 12vw;
     text-align: right;
     margin-right: 1vw;
@@ -22,7 +26,9 @@ nav {
     font-family: 'Montserrat', sans-serif;
 }
 #menu li {
+    /*Container element for menu-listen som vises når man klikker ind på burger menu'en*/
     display: block;
+    /*Viser listen som et blok-element*/
     margin-top: 2vw;
     margin-bottom: 5vw;
     margin-right: 2vw;
@@ -31,6 +37,7 @@ nav {
     margin-left: 8vw;
 }
 #menu a {
+    /* selve menu-listen */
     font-family: 'Montserrat', sans-serif;
     font-size: 5vw;
     color: white;
@@ -39,12 +46,15 @@ nav {
 }
 .hidden {
     display: none;
+    /* Desktop menu-linjen bliver ikke vist i mobil versionen */
 }
 .nav_hide {
     height: 8vh;
+    /* Nav'en har en højde på 8vh */
 }
 #logo {
     position: absolute;
+    /* Logo'et placerer sig ift. sin parent */
     width: 25vw;
     left: 2.5vw;
     top: 3vw;
@@ -54,13 +64,17 @@ nav {
 
 #first_section {
     display: flex;
+    /* filtreringsknapper lægges ved siden af hinanden */
     flex-wrap: wrap;
+    /* filtreringsknapper lægges under hinanden når skærmen gøres mindre */
     margin: 0;
 }
 #first_section img {
     width: 70px;
+    /* filtreringsbillederne skal være 70 px bredde */
     height: 100px;
     object-fit: cover;
+    /* billedet bevarer sit forhold og udfylder dimensionen på 70px bredde og 100px højde */
     margin-left: 3vw;
     margin-right: 3vw;
     box-shadow: 9px 10px 25px 8px rgba(0, 0, 0, 0.7);
@@ -80,12 +94,23 @@ main {
     width: 170px;
     height: 275px;
     object-fit: cover;
+    /* billederne bevarer sit forhold og udfylder dimensionen på 170px bredde og 275px højde */
 }
 #second_section {
     display: grid;
+    /* container element for hvert enkelte bog vises i et grid*/
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* grid'et består af en vilkårlig række kolonner som mindst er 150px og fylder 1 fraction hver*/
     grid-gap: 4vw;
     margin: 10vw 2vw 0 2vw;
+}
+article {
+    /* container element for de fetchede informationer om hver bog*/
+    display: flex;
+    /* Disse informationer placeres ens */
+    flex-direction: column;
+    justify-content: space-between;
+    /* informationerne fastsættes til bunden*/
 }
 h2 {
     font-family: 'Frank Ruhl Libre', serif;
@@ -123,18 +148,15 @@ h4 {
 hr {
     margin: 0 3vw 0 3vw;
     color: gray;
+    /* Den vandrette streg under filtreringsknapperne er grå */
     border-style: solid;
-}
-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 /*FOOTER MOBILE*/
 
 footer {
     width: 100vw;
+    /* Footeren fylder hele siden */
     height: 26vw;
     background-color: #F4EEED;
 }
@@ -150,13 +172,10 @@ footer h5 {
 }
 footer hr {
     color: gray;
+    /* Den vandrette streg under footer h5 er grå */
     width: 50vw;
     margin-left: 5vw;
     border-style: solid;
-}
-.ikoner {
-    display: flex;
-    margin-left: 5vw;
 }
 
 /*FOOTER MOBILE SLUT*/

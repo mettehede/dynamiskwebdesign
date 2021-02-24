@@ -7,14 +7,18 @@
 
 nav {
     position: fixed;
+    /*Menu'en placere sig ovenpå sidens øvrige*/
     top: 0;
+    /*Den placerer sig øverst*/
     width: 100vw;
     height: 100vh;
     background-color: #54574F;
     text-align: center;
     z-index: 99;
+    /*Den har højeste z-index og ligger derfor ovenpå alt andet*/
 }
 #menuburger {
+    /*Burger menu'en*/
     font-size: 12vw;
     text-align: right;
     margin-right: 1vw;
@@ -22,15 +26,15 @@ nav {
     font-family: 'Montserrat', sans-serif;
 }
 #menu li {
+    /*Container element for menu-listen som vises når man klikker ind på burger menu'en*/
     display: block;
-    margin-top: 2vw;
-    margin-bottom: 5vw;
-    margin-right: 2vw;
+    /*Viser listen som et blok-element*/
+    margin: 2vw 2vw 5vw 8vw;
     padding: 2vw;
     width: 80%;
-    margin-left: 8vw;
 }
 #menu a {
+    /* selve menu-listen */
     font-family: 'Montserrat', sans-serif;
     font-size: 5vw;
     color: white;
@@ -39,12 +43,15 @@ nav {
 }
 .hidden {
     display: none;
+    /* Desktop menu-linjen bliver ikke vist i mobil versionen */
 }
 .nav_hide {
     height: 8vh;
+    /* Nav'en har en højde på 8vh */
 }
 #logo {
     position: absolute;
+    /* Logo'et placerer sig ift. sin parent */
     width: 25vw;
     left: 2.5vw;
     top: 3vw;
@@ -59,12 +66,15 @@ body {
 }
 main {
     margin-top: 25vw;
+    /* alt indholdet i main skal til at starte med ligge under menu'en */
 }
 .bog img {
     width: 300px;
+    /* billederne af bøgerne skal være 300px bredde */
     box-shadow: 9px 10px 25px 8px rgba(0, 0, 0, 0.7);
 }
 .forfatter {
+    /* class for h2 tagget som viser forfatteren */
     font-family: 'Frank Ruhl Libre', serif;
     font-style: italic;
     font-weight: lighter;
@@ -72,36 +82,46 @@ main {
     margin-top: 7vw;
 }
 .titel {
+    /* class for h3 tagget som viser titlen */
     font-family: 'Frank Ruhl Libre', serif;
     font-size: 2rem;
     margin-bottom: 6vw;
 }
 .pris {
+    /* class for h3 tagget som viser prisen */
     font-family: 'Frank Ruhl Libre', serif;
     font-weight: normal;
     font-size: 1.7rem;
     margin-bottom: 15vw;
 }
 .bog {
+    /* container element for indhold af bogen */
     margin-left: 9.5vw;
     margin-right: 9.5vw;
 }
 h5 {
+    /* container element for indhold af bogen */
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     font-size: 1.3rem;
     margin-bottom: 2vw;
 }
 .beskrivelse {
+    /* class for p tagget som viser beskrivelsen */
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     margin-bottom: 20vw;
 }
 .info {
-    display: inline-grid;
+    /* container element for info skemaet */
+    display: grid;
+    /* info skemaet vises med et grid */
     grid-template-columns: 1fr 1fr;
+    /* I skemaet er der 2 kolonner */
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    /* I skemaet er der 4 rækker */
     background-color: rgba(0, 0, 0, 0.5);
+    /* Skemaet har en gennemsigtighed på 0.5 */
     width: 100%;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
@@ -109,10 +129,12 @@ h5 {
 }
 .info div {
     border-bottom: solid 2px #e89071;
+    /* hvert felt i skemaet har en border i bunden */
     padding: 5vw 0vw 2vw 2vw;
 }
 .italic {
     font-style: italic;
+    /* De fetchede informationer skal være italic */
     font-weight: lighter;
     border-bottom: solid 2px #e89071;
     padding: 5vw 0vw 2vw 2vw;
@@ -122,6 +144,7 @@ h5 {
 
 footer {
     width: 100vw;
+    /* Footeren fylder hele siden */
     height: 26vw;
     background-color: #F4EEED;
 }
@@ -137,13 +160,10 @@ footer h5 {
 }
 footer hr {
     color: gray;
+    /* Den vandrette streg under footer h5 er grå */
     width: 50vw;
     margin-left: 5vw;
     border-style: solid;
-}
-.ikoner {
-    display: flex;
-    margin-left: 5vw;
 }
 
 /*FOOTER MOBILE SLUT*/

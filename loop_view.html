@@ -75,7 +75,7 @@
     </footer>
 
     <script>
-        // Kodning til menu
+        // KODNING TIL MENU
         function toggelmenu() {
             console.log("toggelmenu");
             document.querySelector("#menu").classList.toggle("hidden");
@@ -91,17 +91,19 @@
 
         }
 
-        //Kodning til array
+        //KODNING TIL ARRAY
 
+        //alle konstanter defineret
         const url = "https://newchapter-47b9.restdb.io/rest/books";
         const medieurl = "https://newchapter-47b9.restdb.io/media/";
+        const container = document.querySelector("#second_section");
+        const temp = document.querySelector("template").content;
 
         const options = {
             headers: {
                 'x-apikey': "602f9a2a5ad3610fb5bb63d1"
             }
         };
-        //        const header = document.querySelector("h2");
 
         document.addEventListener("DOMContentLoaded", start);
         let boeger;
@@ -115,6 +117,7 @@
             hentData();
         }
 
+        // funktion der filtrer bøgerne på siden, alt efter hvilken knap der er klikket på;
         function filtrerBoeger() {
             filter = this.dataset.kategori;
             document.querySelector(".valgt").classList.remove("valgt");
@@ -123,7 +126,7 @@
             visBoeger();
         }
 
-
+        // Her hentes JSON data ind og sendes videre til funktionen visBoeger;
         async function hentData() {
             const respons = await fetch(url, options);
             boeger = await respons.json();
@@ -131,27 +134,23 @@
             visBoeger();
         }
 
-
+        // visBoeger sætter hver enkelte bog ind i HTML;
         function visBoeger() {
-
-            const container = document.querySelector("#second_section");
-            const temp = document.querySelector("template").content;
-
-            container.textContent = "";
-
-            boeger.forEach(bog => {
+            container.textContent = ""; // HTML containeren tømmes så der fyldes nyt indhold i den
+            boeger.forEach(bog => { // arrayer boeger løbes igennem, og hver bog indsættes i HTML
                 if (filter == bog.kategori || filter == "alle") {
-                    const klon = temp.cloneNode(true);
+                    const klon = temp.cloneNode(true); // HTML templaten klones og fyldes med indhold
                     klon.querySelector(".omslag").src = medieurl + bog.omslag;
                     klon.querySelector(".titel").textContent = bog.titel;
                     klon.querySelector(".forfatter").textContent = bog.forfatter;
                     klon.querySelector(".pris").textContent = (`DKK ${bog.pris},-`);
                     klon.querySelector(".bog").addEventListener("click", () => visDetaljer(bog));
-                    container.appendChild(klon);
+                    container.appendChild(klon); // klonen tilføjes til DOM
                 }
             })
         }
 
+        // Funktion der sender videre til singleview side;
         function visDetaljer(hvad) {
             location.href = `single_view.html?id=${hvad._id}`;
         }
