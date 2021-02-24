@@ -73,7 +73,6 @@
 
     <script>
         //        kodning til menu
-
         function toggelmenu() {
             console.log("toggelmenu");
             document.querySelector("#menu").classList.toggle("hidden");
@@ -88,6 +87,7 @@
             }
         }
 
+        //forbundet til backend
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
 
@@ -100,18 +100,22 @@
         console.log("ID", id);
         document.addEventListener("DOMContentLoaded", hentData);
 
+        //Funktion som henter information fra JSON ned og fetcher videre til visBog
         async function hentData() {
             console.log("sidenVises");
             document.querySelector("#menuburger").addEventListener("click", toggelmenu);
 
+            // konstant funktion fetcher data ned fra backend
             const JSONData = await fetch(`https://newchapter-47b9.restdb.io/rest/books/${id}`, {
                 headers: myHeaders
             });
+            //forbinder JSON til hver enkelte bog
             bog = await JSONData.json();
             console.log("bøger", bog);
             visBog(bog);
         }
 
+        //Funktionen som tilføjer indholdet til den pågældende bog
         function visBog() {
             document.querySelector(".omslag").src = medieurl + bog.omslag;
             document.querySelector(".forfatter").textContent = bog.forfatter;
@@ -120,13 +124,12 @@
             document.querySelector(".beskrivelse").textContent = bog.beskrivelse;
             document.querySelector(".sidetal").textContent = bog.sidetal;
 
+            //String der præciserer udgivelsesdato
             const string = bog.udgivelsesdato; // f.eks. 2011-06-07T00:00:00.000Z
             const pattern = /[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/; // mønster: XXXX-XX-XX
             const result = string.match(pattern); // find den del af string der matcher mønster (pattern)
             console.log(result);
             document.querySelector(".udgivelsesdato").textContent = result;
-
-
             document.querySelector(".forlag").textContent = bog.forlag;
             document.querySelector(".sprog").textContent = bog.sprog;
         }
