@@ -54,6 +54,7 @@
 
         <hr>
 
+        <h1>Alle</h1>
         <section id="second_section"></section>
         <!--Tom container til alle bøgerne-->
         <template>
@@ -103,6 +104,7 @@
                 'x-apikey': "602f9a2a5ad3610fb5bb63d1"
             }
         };
+        const header = document.querySelector("h1");
 
         document.addEventListener("DOMContentLoaded", start);
         let boeger;
@@ -121,6 +123,7 @@
             filter = this.dataset.kategori;
             document.querySelector(".valgt").classList.remove("valgt");
             this.classList.add("valgt");
+            header.textContent = this.textContent;
             visBoeger();
         }
 

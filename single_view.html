@@ -72,7 +72,7 @@
     </main>
 
     <script>
-        //        kodning til menu
+        // kodning til menu
         function toggelmenu() {
             console.log("toggelmenu");
             document.querySelector("#menu").classList.toggle("hidden");
@@ -87,7 +87,7 @@
             }
         }
 
-        //forbundet til backend
+        //forbinder til backend
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
 
@@ -100,7 +100,7 @@
         console.log("ID", id);
         document.addEventListener("DOMContentLoaded", hentData);
 
-        //Funktion som henter information fra JSON ned og fetcher videre til visBog
+        //Her hentes JSON data ind og sendes videre til funktionen visBog;
         async function hentData() {
             console.log("sidenVises");
             document.querySelector("#menuburger").addEventListener("click", toggelmenu);
@@ -115,7 +115,7 @@
             visBog(bog);
         }
 
-        //Funktionen som tilføjer indholdet til den pågældende bog
+        //Funktionen tilføjer indholdet af hver enkelte bog ind i HTML
         function visBog() {
             document.querySelector(".omslag").src = medieurl + bog.omslag;
             document.querySelector(".forfatter").textContent = bog.forfatter;

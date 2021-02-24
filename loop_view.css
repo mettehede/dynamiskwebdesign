@@ -102,7 +102,7 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     /* grid'et består af en vilkårlig række kolonner som mindst er 150px og fylder 1 fraction hver*/
     grid-gap: 4vw;
-    margin: 10vw 2vw 0 2vw;
+    margin: 8vw 2vw 0 2vw;
 }
 article {
     /* container element for de fetchede informationer om hver bog*/
@@ -111,6 +111,15 @@ article {
     flex-direction: column;
     justify-content: space-between;
     /* informationerne fastsættes til bunden*/
+}
+h1 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2vw;
 }
 h2 {
     font-family: 'Frank Ruhl Libre', serif;
@@ -263,7 +272,7 @@ footer hr {
     }
     #second_section {
         grid-gap: 5vw;
-        margin-top: 7vw;
+        margin-top: 3vw;
     }
     .titel {
         margin-bottom: 0;
