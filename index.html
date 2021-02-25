@@ -301,16 +301,13 @@
         function visSlides(n) {
             let i;
             let slides = document.getElementsByClassName("anmeldelse");
-            //hvis n er større end 'længden' af .anmeldelse classen så skal slideNummer være 1
             if (n > slides.length) {
                 slideNummer = 1
             }
             if (n < 1) {
-                //hvis n er mindre end 1 skal slideNummer være lig med 'længden' af .anmeldelse
                 slideNummer = slides.length
             }
             for (i = 0; i < slides.length; i++) {
-                //hvis variablen i er lig med 0, eller mindre end 'længden' af .anmeldelse skal der tilføjes
                 slides[i].style.display = "none";
             }
             slides[slideNummer - 1].style.display = "grid";

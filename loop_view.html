@@ -98,6 +98,7 @@
         const medieurl = "https://newchapter-47b9.restdb.io/media/";
         const container = document.querySelector("#second_section");
         const temp = document.querySelector("template").content;
+        const filterKnapper = document.querySelectorAll("#first_section a");
 
         const options = {
             headers: {
@@ -113,7 +114,6 @@
         function start() {
             console.log("sidenVises");
             document.querySelector("#menuburger").addEventListener("click", toggelmenu);
-            const filterKnapper = document.querySelectorAll("#first_section a");
             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerBoeger));
             hentData();
         }
