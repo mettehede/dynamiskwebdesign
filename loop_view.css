@@ -130,6 +130,15 @@ h2 {
     font-size: 2rem;
     margin-bottom: 5vw;
 }
+h6 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2vw;
+}
 p {
     color: white
 }
@@ -241,7 +250,7 @@ footer hr {
     #first_section {
         display: flex;
         margin-left: 10vw;
-        margin-top: 7vw;
+        margin-top: 2vw;
         margin-bottom: 1vw;
     }
     #first_section img {
